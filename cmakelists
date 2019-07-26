@@ -1,9 +1,7 @@
 <1111111111111111111111111111111111111111111111111>
 
 #find packages
-
 find_package(OpenCV REQUIRED)
-
 find_package(Boost COMPONENTS system iostreams)
 
 find_package(Eigen3 REQUIRED)
