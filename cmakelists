@@ -1,0 +1,56 @@
+<1111111111111111111111111111111111111111111111111>
+
+#find packages
+
+find_package(OpenCV REQUIRED)
+
+find_package(Boost COMPONENTS system iostreams)
+
+find_package(Eigen3 REQUIRED)
+
+find_package(PCL 1.7 REQUIRED)
+
+#include headers
+
+add_definitions(${PCL_DEFINITIONS})
+
+include_directories(${OpenCV_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR} ${PCL_INCLUDE_DIRS})
+
+#target generation
+
+set(SRC main.cpp)
+
+add_executable(test ${SRC})
+
+target_link_libraries(test ${OpenCV_LIBS} ${Boost_LIBRARIES} ${EIGEN3_INCLUDE_DIR}  ${PCL_LIBRARIES})
+
+
+<22222222222222222222222222222222222222222222222222>
+
+include_directories( /usr/include  /usr/local/include )
+
+#find lib
+
+find_library(qpOASES-lib qpOASES /usr/lib  /usr/local/lib)
+
+find_library(yaml-lib yaml-cpp /usr/lib  /usr/local/lib)
+
+#target generation
+
+set(SRC main.cpp)
+
+add_executable(test ${SRC})
+
+target_link_libraries(test ${qpOASES-lib} ${yaml-lib})
+
+
+<333333333333333333333333333333333333333333333333333>
+
+#find packages
+
+include_directories(./3rdparty/qpOASES/include)
+
+link_directories(/3rdparty/qpOASES/lib)
+
+link_libraries( qpOASES.a )
+
